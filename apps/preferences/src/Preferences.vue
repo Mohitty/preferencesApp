@@ -7,18 +7,20 @@
       <div class="uk-flex">
         <h3>Document Associations</h3>
       </div>
-      <div class="drop-down">
-        <div class="mimetype">
-          <label for="mime-type"><strong>Mime Type</strong></label>
-          <dropdown id="mimetype-dropdown" :options="mimetypesList" @input="setMimetype"></dropdown>
+      <div class="doc-association">
+        <div class="drop-down">
+          <div class="mimetype">
+            <label for="mime-type"><strong>Mime Type</strong></label>
+            <dropdown id="mimetype-dropdown" :options="mimetypesList" @input="setMimetype"></dropdown>
+          </div>
+          <div class="provider">
+            <label for="providers"><strong>Providers</strong></label>
+            <dropdown id="provider-dropdown" :options="providersList" @input="setProvider" v-model="selectedProvider"></dropdown>
+          </div>
         </div>
-        <div class="provider">
-          <label for="providers"><strong>Providers</strong></label>
-          <dropdown id="provider-dropdown" :options="providersList" @input="setProvider" v-model="selectedProvider"></dropdown>
+        <div class="button">
+          <button @click="RegisterAppProvider" id="register">Register</button>
         </div>
-      </div>
-      <div class="register-app">
-        <button @click="RegisterAppProvider" id="register">Register</button>
       </div>
     </div>
   </div>
@@ -142,21 +144,31 @@ export default {
 </script>
 
 <style>
+div.doc-association {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+div.drop-down {
+  display: flex;
+  justify-content: flex-start;
+}
 div.mimetype {
-  float: left;
   height: 30%;
-  width: 20%;
   color: black;
-  padding: 15px 15px 15px 15px;
+  padding: 15px 0px 0px 15px;
 }
 div.provider {
-  float: left;
   height: 30%;
-  width: 20%;
   color: black;
-  padding: 15px 15px 15px 15px;
+  padding: 15px 0px 0px 15px;
+}
+div.button {
+  height: 25%;
+  color: black;
+  padding: 15px 0px 0px 15px;
 }
 div.uk-flex {
-  padding: 15px 15px 15px 15px;
+  padding: 15px 0px 0px 15px;
 }
 </style>
