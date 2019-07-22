@@ -17,6 +17,9 @@
           <dropdown id="provider-dropdown" :options="providersList" @input="setProvider" v-model="selectedProvider"></dropdown>
         </div>
       </div>
+      <div class="register-app">
+        <button @click="RegisterAppProvider" id="register">Register</button>
+      </div>
     </div>
   </div>
 </template>
@@ -86,6 +89,7 @@ export default {
     },
     setMimetype (mime) {
       this.selectedMimeType = mime
+      this.selectedProvider = ''
       console.log(this.selectedMimeType)
 
       const url = 'http://localhost:9998/preferences/' + this.selectedMimeType
@@ -111,7 +115,8 @@ export default {
     },
     setProvider (appProvider) {
       this.selectedProvider = appProvider
-
+    },
+    RegisterAppProvider () {
       const url = 'http://localhost:9998/preferences/' + this.selectedMimeType
 
       let myheaders = new Headers()
