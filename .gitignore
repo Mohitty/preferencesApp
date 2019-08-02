@@ -8,6 +8,7 @@ apps/*
 !apps/markdown-editor
 !apps/pdf-viewer
 !apps/preferences
+!apps/root-viewer
 
 .idea
 *.bundle.js
