@@ -2,7 +2,7 @@
   <div id="root-viewer">
     <root-viewer-app-bar />
     <div class="uk-flex">
-      <span v-html="iframeElement"></span>
+      <iframe :src="iframeElement" height="800" width="800" />
     </div>
   </div>
 </template>
@@ -31,7 +31,8 @@ export default {
   },
   methods: {
     getIframe () {
-      this.iframeLocation = '<iframe src="http://localhost:9998/iframe/open/file.txt?access-token=' + this.getToken + '" />'
+      console.log(this.getToken)
+      this.iframeLocation = 'http://localhost:9998/iframe/open/AtlasExample.root?access_token=' + this.getToken
     }
   }
 }
