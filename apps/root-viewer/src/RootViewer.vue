@@ -24,7 +24,7 @@ export default {
     RootViewerAppBar
   },
   computed: {
-    ...mapGetters(['getToken']),
+    ...mapGetters(['getToken', 'activeFile']),
     iframeElement () {
       return this.iframeLocation
     }
@@ -32,7 +32,7 @@ export default {
   methods: {
     getIframe () {
       console.log(this.getToken)
-      this.iframeLocation = 'http://localhost:9998/iframe/open/AtlasExample.root?access_token=' + this.getToken
+      this.iframeLocation = 'http://localhost:9998/iframe/open/' + this.activeFile.path.substr(1) + '?access_token=' + this.getToken
     }
   }
 }
