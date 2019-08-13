@@ -61,7 +61,7 @@ export default {
   max-width: 100%;
   margin: 0;
   padding: 0;
-  padding-bottom: 25px;
+  padding-bottom: 75px;
   border: 0 none;
   box-sizing: border-box;
 }
