@@ -1,9 +1,7 @@
 const namespaced = true
 
 const state = {
-  touched: false,
   loading: false,
-  currentFile: '',
   lastError: null
 }
 
@@ -11,11 +9,11 @@ const actions = {
   clearLastError ({ commit }) {
     commit('ERROR', '')
   },
-  load ({ commit }, value) {
-    commit('LOAD', value)
+  isLoading ({ commit }, value) {
+    commit('LOADING', value)
   },
-  saveFile ({ commit }) {
-    commit('SAVE')
+  newError ({ commit }, value) {
+    commit('ERROR', value)
   }
 }
 
@@ -23,25 +21,13 @@ const mutations = {
   LOADING (state, loading) {
     state.loading = loading
   },
-  CURRENT_FILE (state, filePath) {
-    state.currentFile = filePath
-  },
   ERROR (state, errorMessage) {
     state.lastError = errorMessage
-  },
-  LOAD (state, value) {
-    state.loading = value
-  },
-  SAVE (state) {
-    console.log('file saved')
   }
 }
 
 const getters = {
-  isTouched: state => {
-    return state.touched
-  },
-  isLoading: state => {
+  loading: state => {
     return state.loading
   },
   lastError: state => {

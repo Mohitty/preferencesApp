@@ -1,7 +1,7 @@
 const namespaced = true
 
 const state = {
-  mimeTypes: ['text/plain', 'application/pdf', 'text/html', 'application/javascript']
+  mimeTypes: ['application/x-root']
 }
 
 const actions = {
