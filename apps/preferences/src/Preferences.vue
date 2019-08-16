@@ -65,7 +65,7 @@ export default {
     fetchdata () {
       this.loading = true
 
-      const url = 'http://localhost:9998/preferences/list'
+      const url = 'http://localhost:9998/appregistry/list'
 
       let myheaders = new Headers()
       myheaders.append('Authorization', 'Bearer ' + this.getToken)
